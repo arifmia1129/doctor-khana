@@ -1,5 +1,6 @@
 import React from 'react';
 import img from "../../../img/doctor.jpg";
+import Services from '../Services/Services';
 const Home = () => {
     return (
         <div>
@@ -13,6 +14,7 @@ const Home = () => {
                     <img className='rounded-3 img-fluid' src={img} alt="" />
                 </div>
             </div>
+            <Services></Services>
         </div>
     );
 };
