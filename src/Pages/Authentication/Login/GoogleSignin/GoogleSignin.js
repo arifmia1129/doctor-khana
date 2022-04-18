@@ -3,14 +3,21 @@ import auth from "../../../../firebase.init";
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from "../../../Shared/Loading/Loading";
 import { ToastContainer, toast } from 'react-toastify';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const GoogleSignin = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     if (error) {
         toast(error.message);
     }
     if (loading) {
         return <Loading></Loading>
+    }
+    if (user) {
+        navigate(from, { replace: true });
     }
     return (
         <div>

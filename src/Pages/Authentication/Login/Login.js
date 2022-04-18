@@ -1,5 +1,5 @@
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignin from './GoogleSignin/GoogleSignin';
 import "./Login.css";
 import auth from '../../../firebase.init';
@@ -9,6 +9,8 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
@@ -31,8 +33,9 @@ const Login = () => {
         toast(error.message);
     }
     if (user) {
-        navigate('/');
+        navigate(from, { replace: true });
     }
+
 
     return (
         <div className='mx-auto my-5 form p-2'>
