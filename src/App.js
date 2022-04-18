@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import 'react-toastify/dist/ReactToastify.css';
+import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -20,7 +21,11 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/checkout" element={
+          <RequireAuth>
+            <Checkout />
+          </RequireAuth>
+        }></Route>
       </Routes>
 
       <Footer></Footer>
