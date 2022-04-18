@@ -10,6 +10,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
         <Route path="/checkout" element={
           <RequireAuth>
             <Checkout />
