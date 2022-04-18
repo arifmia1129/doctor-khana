@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import GoogleSignin from './GoogleSignin/GoogleSignin';
@@ -22,14 +21,15 @@ const Login = () => {
         const password = e.target.password.value;
         signInWithEmailAndPassword(email, password);
 
-        if (error) {
-            toast(error.message);
-        }
+
     }
+
     if (loading) {
         return <Loading></Loading>
     }
-
+    if (error) {
+        toast(error.message);
+    }
     if (user) {
         navigate('/');
     }
@@ -54,11 +54,11 @@ const Login = () => {
                     <Button className='w-50 mx-auto d-block' variant="success" type="submit">
                         Login
                     </Button>
-                    <ToastContainer />
+
                     <p className='text-center my-4'>You have not an account? <Link to="/register" className='text-primary sign-up fw-bold'>Register now!</Link></p>
                     <GoogleSignin></GoogleSignin>
                 </Form>
-
+                <ToastContainer />
             </div>
         </div>
     );
