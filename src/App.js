@@ -1,3 +1,4 @@
+import { Spinner } from 'react-bootstrap';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
@@ -8,12 +9,12 @@ import Checkout from './Pages/Checkout/Checkout';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div>
       <Header></Header>
-
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/blogs" element={<Blogs />}></Route>

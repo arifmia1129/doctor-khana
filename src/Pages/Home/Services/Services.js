@@ -7,7 +7,7 @@ const Services = () => {
     const services = [
         { id: 1, name: "Brain Cancer", price: 15000, img: can1 },
         { id: 2, name: "Breast Cancer", price: 15000, img: can2 },
-        { id: 1, name: "Screen Cancer", price: 15000, img: can3 }
+        { id: 3, name: "Screen Cancer", price: 15000, img: can3 }
     ];
     return (
         <div>
