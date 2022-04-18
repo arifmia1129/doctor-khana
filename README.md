@@ -1,6 +1,10 @@
 # DOCTOR KHANA
 
-Live site available now : [DOCTOR KHANA](https://github.com/facebook/create-react-app).
+Live site available now : [DOCTOR KHANA](https://doctor-khana.web.app/).
+
+OR
+
+https://doctor-khana.web.app/
 
 ## Website features and functionality :
 * Available route 7
